@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Rates - Hyderabad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="#f59e0b" stroke-width="2"/>
+                        <path d="M12 6v12M8 10l4-4 4 4M8 14l4 4 4-4" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1>Gold Rates</h1>
+                    <p class="location">Hyderabad, India</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <span class="update-badge" id="last-updated">Loading...</span>
+            </div>
+        </header>
+
+        <!-- Main Price Cards -->
+        <section class="price-cards">
+            <div class="price-card primary">
+                <div class="card-label">24K Pure Gold</div>
+                <div class="card-price" id="price-24k">--</div>
+                <div class="card-unit">per gram</div>
+                <div class="card-change" id="change-24k">--</div>
+            </div>
+            <div class="price-card">
+                <div class="card-label">22K Hallmark</div>
+                <div class="card-price" id="price-22k">--</div>
+                <div class="card-unit">per gram</div>
+                <div class="card-change" id="change-22k">--</div>
+            </div>
+            <div class="price-card">
+                <div class="card-label">18K Gold</div>
+                <div class="card-price" id="price-18k">--</div>
+                <div class="card-unit">per gram</div>
+                <div class="card-change neutral">Jewellery use</div>
+            </div>
+        </section>
+
+        <!-- Weight Table -->
+        <section class="card">
+            <div class="card-header">
+                <h2>Price by Weight</h2>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Weight</th>
+                            <th>24K</th>
+                            <th>22K</th>
+                            <th>18K</th>
+                        </tr>
+                    </thead>
+                    <tbody id="weight-table"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Chart -->
+        <section class="card">
+            <div class="card-header">
+                <h2>Price Trend</h2>
+                <div class="chart-controls">
+                    <div class="toggle-group">
+                        <button class="toggle-btn active" data-purity="24K">24K</button>
+                        <button class="toggle-btn" data-purity="22K">22K</button>
+                    </div>
+                    <div class="toggle-group">
+                        <button class="range-btn active" data-days="10">10D</button>
+                        <button class="range-btn" data-days="30">30D</button>
+                        <button class="range-btn" data-days="90">90D</button>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="price-chart"></canvas>
+            </div>
+        </section>
+
+        <!-- History -->
+        <section class="card">
+            <div class="card-header">
+                <h2>History</h2>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th class="right">24K</th>
+                            <th class="right">24K Δ</th>
+                            <th class="right">22K</th>
+                            <th class="right">22K Δ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-table"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Data from <a href="https://www.goodreturns.in" target="_blank">GoodReturns.in</a> · Updates every 4 hours</p>
+        </footer>
+    </div>
+    <script src="app.js?v=2"></script>
+</body>
+</html>
